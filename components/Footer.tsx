@@ -16,7 +16,7 @@ export default function Footer() {
   return (
     <footer className="relative border-t border-white/10 bg-ink-900/50">
       <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8">
-        <div className="grid gap-12 md:grid-cols-[1.6fr_1fr_1fr]">
+        <div className="grid gap-12 md:grid-cols-[1.6fr_1fr_1fr_1.4fr]">
           {/* Brand */}
           <div>
             <a
@@ -75,37 +75,37 @@ export default function Footer() {
               ))}
             </ul>
           </div>
-        </div>
 
-        {/* Company contact — full width below */}
-        <div className="mt-12 border-t border-white/10 pt-8">
-          <h4 className="text-xs font-semibold uppercase tracking-widest text-white/40">
-            Connect
-          </h4>
-          <div className="mt-4 space-y-2 text-sm text-white/70">
-            <p className="font-semibold text-white">{siteConfig.legalName}</p>
-            <p className="flex items-start gap-2">
-              <HiMapPin className="mt-0.5 h-4 w-4 shrink-0 text-brand-magenta" />
-              <span>
-                {siteConfig.address.street}
-                <br />
-                {siteConfig.address.city}, {siteConfig.address.state}{" "}
-                {siteConfig.address.zip}
-                <br />
-                {siteConfig.address.country}
-              </span>
-            </p>
-            <a
-              href={`mailto:${siteConfig.email}`}
-              className="inline-flex items-center gap-2 transition-colors hover:text-white"
-            >
-              <HiEnvelope className="h-4 w-4 shrink-0 text-brand-magenta" />
-              {siteConfig.email}
-            </a>
+          {/* Connect — right column */}
+          <div>
+            <h4 className="text-xs font-semibold uppercase tracking-widest text-white/40">
+              Connect
+            </h4>
+            <div className="mt-4 space-y-2 text-sm text-white/70">
+              <p className="font-semibold text-white">{siteConfig.legalName}</p>
+              <p className="flex items-start gap-2">
+                <HiMapPin className="mt-0.5 h-4 w-4 shrink-0 text-brand-magenta" />
+                <span>
+                  {siteConfig.address.street}
+                  <br />
+                  {siteConfig.address.city}, {siteConfig.address.state}{" "}
+                  {siteConfig.address.zip}
+                  <br />
+                  {siteConfig.address.country}
+                </span>
+              </p>
+              <a
+                href={`mailto:${siteConfig.email}`}
+                className="inline-flex items-center gap-2 transition-colors hover:text-white"
+              >
+                <HiEnvelope className="h-4 w-4 shrink-0 text-brand-magenta" />
+                {siteConfig.email}
+              </a>
+            </div>
           </div>
         </div>
 
-        <div className="mt-10 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 sm:flex-row">
+        <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 sm:flex-row">
           <p className="text-sm text-white/45">
             © {year} {siteConfig.legalName}. All rights reserved.
           </p>
