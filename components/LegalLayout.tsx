@@ -68,6 +68,12 @@ export default function LegalLayout({
               </p>
               <p>{siteConfig.address.country}</p>
               <p className="pt-2">
+                {siteConfig.addressFrance.street}
+                <br />
+                {siteConfig.addressFrance.zip} {siteConfig.addressFrance.city},{" "}
+                {siteConfig.addressFrance.country}
+              </p>
+              <p className="pt-2">
                 Email:{" "}
                 <a
                   href={`mailto:${siteConfig.email}`}

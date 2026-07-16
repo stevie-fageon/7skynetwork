@@ -9,13 +9,19 @@ export const siteConfig = {
   domain: "7skynetwork.net",
   url: "https://7skynetwork.net",
   email: "hello@7skynetwork.net",
-  // Address of the registered entity (used in legal pages + footer)
+  // Addresses of the entity (used in legal pages + footer)
   address: {
     street: "30 N Gould St Ste R",
     city: "Sheridan",
     state: "WY",
     zip: "82801",
     country: "United States",
+  },
+  addressFrance: {
+    street: "3 allée Jean Griffon",
+    zip: "31400",
+    city: "Toulouse",
+    country: "France",
   },
   // State/country whose laws govern the agreements
   governingLaw: "the State of Wyoming, United States",

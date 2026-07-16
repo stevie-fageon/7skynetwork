@@ -94,6 +94,16 @@ export default function Footer() {
                   {siteConfig.address.country}
                 </span>
               </p>
+              <p className="flex items-start gap-2">
+                <HiMapPin className="mt-0.5 h-4 w-4 shrink-0 text-brand-magenta" />
+                <span>
+                  {siteConfig.addressFrance.street}
+                  <br />
+                  {siteConfig.addressFrance.zip} {siteConfig.addressFrance.city}
+                  <br />
+                  {siteConfig.addressFrance.country}
+                </span>
+              </p>
               <a
                 href={`mailto:${siteConfig.email}`}
                 className="inline-flex items-center gap-2 transition-colors hover:text-white"
