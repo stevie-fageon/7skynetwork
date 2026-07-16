@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import { HiBars3, HiXMark } from "react-icons/hi2";
 import { navLinks, siteConfig } from "@/lib/site";
@@ -9,6 +10,8 @@ import { navLinks, siteConfig } from "@/lib/site";
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+  const isHome = pathname === "/";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -35,7 +38,7 @@ export default function Navbar() {
     >
       <nav className="mx-auto flex h-32 max-w-7xl items-center justify-between px-5 sm:px-8">
         {/* Logo */}
-        <a href="#top" className="flex items-center" aria-label={siteConfig.name}>
+        <a href="/" className="flex items-center" aria-label={siteConfig.name}>
           <Image
             src="/logo-7sky.png"
             alt={`${siteConfig.name} logo`}
@@ -51,7 +54,7 @@ export default function Navbar() {
           {navLinks.map((link) => (
             <a
               key={link.href}
-              href={link.href}
+              href={isHome ? link.href : `/${link.href}`}
               className="rounded-full px-4 py-2 text-sm font-medium text-white/70 transition-colors hover:bg-white/5 hover:text-white"
             >
               {link.label}
@@ -60,7 +63,7 @@ export default function Navbar() {
         </div>
 
         <div className="hidden md:block">
-          <a href="#contact" className="btn-primary">
+          <a href="/#contact" className="btn-primary">
             Get in touch
           </a>
         </div>
@@ -91,7 +94,7 @@ export default function Navbar() {
               {navLinks.map((link) => (
                 <a
                   key={link.href}
-                  href={link.href}
+                  href={isHome ? link.href : `/${link.href}`}
                   onClick={() => setOpen(false)}
                   className="rounded-lg px-4 py-3 text-base font-medium text-white/80 transition-colors hover:bg-white/5 hover:text-white"
                 >
@@ -99,7 +102,7 @@ export default function Navbar() {
                 </a>
               ))}
               <a
-                href="#contact"
+                href="/#contact"
                 onClick={() => setOpen(false)}
                 className="btn-primary mt-2 w-full"
               >
